@@ -24,7 +24,7 @@ class Solution:
         res = float('inf')
         for i in range(n):
             target_sum = prefixSums[i] + target
-          # Gives the leftmost index where the 
+          # Gives the leftmost index where the prefix_sum[bound] ≥ prefix_sum[i] + target
             bound = bisect.bisect_left(prefixSums, target_sum)
             if bound <= n:
                 res = min(res, bound - i)
