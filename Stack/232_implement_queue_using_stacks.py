@@ -7,7 +7,7 @@ class MyQueue:
         self.s.append(x)
 
     def pop(self) -> int:
-        for i in range(len(self.s)):
+        while self.s:
             self.extra.append(self.s.pop())
         ans = self.extra[-1]
         self.extra.pop()
