@@ -1,15 +1,6 @@
 class Solution:
-    def shipWithinDays(self, weights: List[int], days: int) -> int:
-        sumOfWeights = 0
-        maxWeight = 0
-
-        for num in weights:
-            if num > maxWeight:
-                maxWeight = num
-            sumOfWeights += num
-        
-        l = maxWeight
-        r = sumOfWeights
+    def shipWithinDays(self, weights: List[int], days: int) -> int:        
+        l, r = max(weights), sum(weights)
 
         def carryWeightsInShipOfSize(capacity: int) -> bool:
             days_needed = 1
